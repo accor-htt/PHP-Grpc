@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package test;
+
+service Observer {
+	rpc Answer(Request) returns (Response) {}
+}
+
+// Stream обозначаете множественный ответ от сервера
+service ObserverStream {
+	rpc ManyAnswer(Request) returns (stream Response) {}
+}
+
+message Response {
+	string message = 1;
+}
+
+message Request {
+	string name = 1;
+}

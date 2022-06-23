@@ -24,6 +24,20 @@ class GreeterStub {
     }
 
     /**
+     * @param \Helloworld\ArrayDataRequest $request client request
+     * @param \Grpc\ServerContext $context server request context
+     * @return \Helloworld\ArrayDataResponse for response data, null if if error occured
+     *     initial metadata (if any) and status (if not ok) should be set to $context
+     */
+    public function SayData(
+        \Helloworld\ArrayDataRequest $request,
+        \Grpc\ServerContext $context
+    ): ?\Helloworld\ArrayDataResponse {
+        $context->setStatus(\Grpc\Status::unimplemented());
+        return null;
+    }
+
+    /**
      * Get the method descriptors of the service for server registration
      *
      * @return array of \Grpc\MethodDescriptor for the service methods
@@ -35,6 +49,12 @@ class GreeterStub {
                 $this,
                 'SayHello',
                 '\Helloworld\HelloRequest',
+                \Grpc\MethodDescriptor::UNARY_CALL
+            ),
+            '/helloworld.Greeter/SayData' => new \Grpc\MethodDescriptor(
+                $this,
+                'SayData',
+                '\Helloworld\ArrayDataRequest',
                 \Grpc\MethodDescriptor::UNARY_CALL
             ),
         ];

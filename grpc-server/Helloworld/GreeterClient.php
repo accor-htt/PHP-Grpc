@@ -32,4 +32,18 @@ class GreeterClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Helloworld\ArrayDataRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function SayData(\Helloworld\ArrayDataRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/helloworld.Greeter/SayData',
+        $argument,
+        ['\Helloworld\ArrayDataResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

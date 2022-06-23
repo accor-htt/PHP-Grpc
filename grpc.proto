@@ -6,6 +6,12 @@ package helloworld;
 service Greeter {
 	// Sends a greeting
 	rpc SayHello (HelloRequest) returns (HelloReply) {}
+
+	rpc SayData (ArrayDataRequest) returns (ArrayDataResponse) {}
+}
+
+service Delivery {
+	rpc GetMaxUsers(DeliveryDataRequest) returns (DeliveryDataResponse) {}
 }
 
 // The request message containing the user's name.
@@ -16,4 +22,21 @@ message HelloRequest {
 // The response message containing the greetings
 message HelloReply {
 	string message = 1;
+}
+
+message ArrayDataRequest {
+	string key = 1;
+}
+
+message ArrayDataResponse {
+	int32 max_client = 1;
+	int32 max_sum = 2;
+}
+
+message DeliveryDataRequest {
+	int32 coef = 1;
+}
+
+message DeliveryDataResponse {
+	int32 max_sum = 1;
 }

@@ -1,0 +1,8 @@
+{
+    "require": {
+        "php": ">=7.4",
+        "ext-openswoole": "^4.10",
+        "google/protobuf": "^3.19",
+        "grpc/grpc": "^1.38"
+    }
+}

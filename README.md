@@ -35,9 +35,15 @@ Spiral - https://github.com/spiral/php-grpc
 ---
 
 GRPC GRPCUI получше узнать, что это (статья: https://russianblogs.com/article/40971758409/)
-
 https://dev.to/khepin/building-a-grpc-server-in-php-3bgc - EXAMPLE WITH SPIRAL AND GO
 
 ---
+MAIN CONCEPT: 
+https://techdozo.dev/grpc-for-microservices-communication/#:~:text=A%20gRPC%20based%20RPC%20framework%20is%20a%20great%20choice%20for,used%20for%20defining%20gRPC%20APIs.
 
-MAIN CONCEPT: https://techdozo.dev/grpc-for-microservices-communication/#:~:text=A%20gRPC%20based%20RPC%20framework%20is%20a%20great%20choice%20for,used%20for%20defining%20gRPC%20APIs.
+---
+
+Example PHP gRPC Server & Nodejs Client
+https://morioh.com/p/f1cdc7719801
+
+---

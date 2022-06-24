@@ -1,5 +1,8 @@
 syntax = "proto3";
 
+import "google/protobuf/any.proto";
+import "google/protobuf/timestamp.proto";
+
 package helloworld;
 
 // The greeting service definition.
@@ -39,4 +42,22 @@ message DeliveryDataRequest {
 
 message DeliveryDataResponse {
 	int32 max_sum = 1;
+}
+
+// пример с любыми типом, приходящий в параметр
+message Notification {
+	int32 id = 1;
+	google.protobuf.Any instrument = 2;
+}
+
+// oneof подразумевает, что полю Value будет задано одно из перечисленных значений, т.е. они не назначаются одновременно.
+message Types{
+	oneof types {
+		string str= 1;
+		double dou = 2;
+	}
+}
+
+message CartographicRadians {
+	repeated Types list = 1;
 }
